@@ -53,7 +53,7 @@ package body My_Package is
 		        		    tmp_win_buffer_t(j) := func3(x,y);
 				       end if;
 				       j := j + 1;
-				end loop
+				end loop;
 			end loop;
 			win_out_buffers(i) := tmp_win_buffer_t;
 		 end loop;
