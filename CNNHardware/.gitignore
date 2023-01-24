@@ -25,6 +25,7 @@
 *_stub.vhdl
 *_funcsim.v
 *_funcsim.vhdl
+*.xpr
 .project
 
 # [dir]
