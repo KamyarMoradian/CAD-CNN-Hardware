@@ -49,10 +49,10 @@ architecture Behavioral of PE is
     
 begin
 
-    GEN_MUL_RES:
+    MUL_RES_ROW_GEN:
     for row in 0 to 2 generate
     begin
-        GEN_MUL_RES0:
+        MUL_RES_COl_GEN:
         for col in 0 to 2 generate
         begin
             uut_multiplier: MultiplierOfReal 
