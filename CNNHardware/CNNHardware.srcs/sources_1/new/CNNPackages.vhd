@@ -30,7 +30,7 @@ package CNNPackages is
 	type win_array_buffer_t is array (integer range <>) of win_buffer_t; -- all the buffers of windows
 	type filter_array_t is array(integer range <>) of filter_t;
 	type pic_t is array (0 to 127, 0 to 127) of pixle;
-	function get_buffer_windows (buffer_index : integer) return win_buffer_t ;
+	function get_buffer_windows (n, buffer_index : integer) return win_buffer_t ;
 	function generate_random_filter return filter_t;
 	function get_all_windows_from_file return win_array_t;
 end package;
