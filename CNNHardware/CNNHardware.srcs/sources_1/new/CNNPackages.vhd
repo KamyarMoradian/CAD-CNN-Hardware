@@ -26,7 +26,7 @@ package CNNPackages is
     type win_t is array (0 to 2, 0 to 2) of pixle;
     type filter_t is array (0 to 2, 0 to 2) of real;
 	type win_array_t is array (0 to 125, 0 to 125) of win_t; -- windows taken from input pic
-	type win_buffer_t is array (integer range <>, 0 to 125, 0 to 125) of win_t; -- windows in the queue
+	type win_buffer_t is array (integer range <>, 0 to 15875) of win_t; -- windows in the queue
 	type filter_array_t is array(integer range <>) of filter_t;
 	type pic_t is array (0 to 127, 0 to 127) of pixle;
 	function get_buffer_windows (buffer_index : integer) return win_array_t ;
