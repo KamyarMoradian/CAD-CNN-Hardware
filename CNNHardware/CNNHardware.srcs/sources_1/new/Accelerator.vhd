@@ -1,22 +1,22 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 01/24/2023 02:08:43 PM
--- Design Name: 
--- Module Name: Accelerator - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+---- Company: 
+---- Engineer: 
+ 
+---- Create Date: 01/24/2023 02:08:43 PM
+---- Design Name: 
+---- Module Name: Accelerator - Behavioral
+---- Project Name: 
+---- Target Devices: 
+---- Tool Versions: 
+---- Description: 
+ 
+---- Dependencies: 
+ 
+---- Revision:
+---- Revision 0.01 - File Created
+---- Additional Comments:
+ 
+------------------------------------------------------------------------------------
 
 
 --library IEEE;
@@ -27,9 +27,9 @@
 --    Generic (N : positive);
 --    Port (
 --        clk: in std_logic;
---        filter_buffer: in filter_array_t;
---        in_window_buffer: in win_buffer_t;
---        out_window_buffer: out win_buffer_t
+--        filter_buffer: in filter_array_t (0 to N - 1);
+--        in_window_buffer: in win_array_buffer_t (0 to N - 1);
+--        out_pic_buffer: out pic_buffer_out_t (0 to N - 1)
 --    );
 --end Accelerator;
 
@@ -39,25 +39,25 @@
 --    component PE is
 --    Port (  input_filter : in filter_t;
 --            input_window : in win_t;
---            output : out real);
+--            output : out pixle);
 --    end component;
     
 ---- signals:
---signal out_index : integer := 0;
---signal in_index : integer := 0;
+--signal buffer_index : integer := 0;
 
 --begin
 
 --    MUL_RES_ROW_GEN:
 --    for index in 0 to N - 1 generate
 --    begin
---        uut_multiplier: PE Port Map (filter_buffer(index), in_window_buffer(row, col), mul_result(row * 3 + col));
+--        uut_multiplier: PE Port Map (filter_buffer(index), in_window_buffer(index)(buffer_index), out_pic_buffer(index)(buffer_index / N, buffer_index mod N));
 --    end generate;
     
 --    counter_increamenter: process(clk) is
 --    begin
---        out_index <= out_index + 1;
---        in_index <= in_index + 1;
+--        if (buffer_index >= 126 * 126 / N) then
+--            buffer_index <= buffer_index + 1;
+--        end if;
 --    end process;
 
 --end Behavioral;

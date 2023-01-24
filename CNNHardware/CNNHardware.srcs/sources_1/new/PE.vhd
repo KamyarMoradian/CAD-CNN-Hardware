@@ -21,21 +21,21 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.MATH_REAL.FLOOR;
 use WORK.CNNPackages.ALL;
 
 entity PE is
     Port (
         input_filter : in filter_t;
         input_window : in win_t;
-        output : out real);
+        output : out pixle);
 end PE;
 
 architecture Behavioral of PE is
-
     -- components:
     component BinaryAdder is
-        Port ( input : in real_vector(0 to 8);
-               output : out real);
+    Port ( input : in vector_real;
+           output : out real);
     end component; 
     
     component MultiplierOfReal is
@@ -45,7 +45,8 @@ architecture Behavioral of PE is
     end component;
     
     -- signals:
-    signal mul_result : real_vector(0 to 8);
+    signal mul_result : vector_real;
+    signal out_temp : real;
     
 begin
 
@@ -60,6 +61,8 @@ begin
         end generate;
     end generate;
     
-    uut_adder: BinaryAdder Port Map (mul_result, output);
-
+    uut_adder: BinaryAdder Port Map (mul_result, out_temp);
+    
+    output <= integer(floor(out_temp));
+    
 end Behavioral;

@@ -23,6 +23,7 @@ USE ieee.std_logic_1164.ALL;
 
 package CNNPackages is
 	subtype pixle is integer range 0 to 255; 
+	type vector_real is array (0 to 8) of real;
 	type win_t is array (0 to 2, 0 to 2) of pixle;
 	type filter_t is array (0 to 2, 0 to 2) of real;
 	type win_array_t is array (0 to 125, 0 to 125) of win_t; -- windows taken from input pic

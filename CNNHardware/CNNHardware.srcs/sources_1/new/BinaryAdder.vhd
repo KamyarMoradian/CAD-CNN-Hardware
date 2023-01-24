@@ -21,9 +21,10 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use WORK.CNNPackages.ALL;
 
 entity BinaryAdder is
-    Port ( input : in real_vector(0 to 8);
+    Port ( input : in vector_real;
            output : out real);
 end BinaryAdder;
 
