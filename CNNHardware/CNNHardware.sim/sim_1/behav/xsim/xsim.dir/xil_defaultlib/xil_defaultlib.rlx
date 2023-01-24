@@ -2,10 +2,10 @@
 2020.2
 Oct 19 2021
 03:16:22
-C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sim_1/new/PE_TB.vhd,1674584191,vhdl,,,,pe_tb,,,,,,,,
-C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sources_1/new/Accelerator.vhd,1674582974,vhdl,,,,accelerator,,,,,,,,
+C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sim_1/new/PE_TB.vhd,1674584315,vhdl,,,,pe_tb,,,,,,,,
+C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sources_1/new/Accelerator.vhd,1674587150,vhdl,,,,accelerator,,,,,,,,
 C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sources_1/new/AdderOfReal.vhd,1674551256,vhdl,,,,adderofreal,,,,,,,,
 C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sources_1/new/BinaryAdder.vhd,1674583567,vhdl,,,,binaryadder,,,,,,,,
-C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sources_1/new/CNNPackages.vhd,1674583433,vhdl,C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sim_1/new/PE_TB.vhd;C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sources_1/new/BinaryAdder.vhd;C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sources_1/new/PE.vhd,,,cnnpackages,,,,,,,,
+C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sources_1/new/CNNPackages.vhd,1674583433,vhdl,C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sources_1/new/Accelerator.vhd,,,cnnpackages,,,,,,,,
 C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sources_1/new/MultiplierOfReal.vhd,1674551170,vhdl,,,,multiplierofreal,,,,,,,,
 C:/Users/Kamyar/Documents/Uni/CAD/Project/CNNHardware/CNNHardware.srcs/sources_1/new/PE.vhd,1674583510,vhdl,,,,pe,,,,,,,,

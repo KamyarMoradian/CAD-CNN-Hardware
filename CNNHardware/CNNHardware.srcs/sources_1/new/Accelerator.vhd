@@ -19,45 +19,47 @@
 ------------------------------------------------------------------------------------
 
 
---library IEEE;
---use IEEE.STD_LOGIC_1164.ALL;
---use WORK.CNNPackages.ALL;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use WORK.CNNPackages.ALL;
 
---entity Accelerator is
---    Generic (N : positive);
---    Port (
---        clk: in std_logic;
---        filter_buffer: in filter_array_t (0 to N - 1);
---        in_window_buffer: in win_array_buffer_t (0 to N - 1);
---        out_pic_buffer: out pic_buffer_out_t (0 to N - 1)
---    );
---end Accelerator;
+entity Accelerator is
+    Generic (N : positive := 4);
+    Port ( clk: in std_logic;
+           filter_buffer: in filter_array_t (0 to N - 1);
+           in_window_buffer: in win_array_buffer_t (0 to N - 1);
+           out_pic_buffer: out pic_buffer_out_t (0 to N - 1));
+end Accelerator;
 
---architecture Behavioral of Accelerator is
+architecture Behavioral of Accelerator is
 
----- components:
---    component PE is
---    Port (  input_filter : in filter_t;
---            input_window : in win_t;
---            output : out pixle);
---    end component;
+-- components:
+    component PE is
+    Port (
+        input_filter : in filter_t;
+        input_window : in win_t;
+        output : out pixle);
+    end component;
     
----- signals:
---signal buffer_index : integer := 0;
+-- signals:
+signal buffer_index : integer := 0;
 
---begin
+begin
 
---    MUL_RES_ROW_GEN:
---    for index in 0 to N - 1 generate
---    begin
---        uut_multiplier: PE Port Map (filter_buffer(index), in_window_buffer(index)(buffer_index), out_pic_buffer(index)(buffer_index / N, buffer_index mod N));
---    end generate;
+    MUL_RES_ROW_GEN:
+    for index in 0 to N - 1 generate
+    begin
+        uut_multiplier: PE Port Map (
+         input_filter => filter_buffer(index), 
+         input_window => in_window_buffer(index)(buffer_index),
+         output => out_pic_buffer(index)(buffer_index / N, buffer_index mod N));
+    end generate;
     
---    counter_increamenter: process(clk) is
---    begin
---        if (buffer_index >= 126 * 126 / N) then
---            buffer_index <= buffer_index + 1;
---        end if;
---    end process;
+    counter_increamenter: process(clk) is
+    begin
+        if (buffer_index >= 126 * 126 / N) then
+            buffer_index <= buffer_index + 1;
+        end if;
+    end process;
 
---end Behavioral;
+end Behavioral;
