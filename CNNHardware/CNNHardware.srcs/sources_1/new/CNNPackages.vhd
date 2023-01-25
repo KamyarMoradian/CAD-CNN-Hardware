@@ -95,7 +95,7 @@ package body My_Package is
 				win_out_array(i,j) := tmp_win;
 			end loop;
 		end loop;
-	return win_array_t;
+	return win_out_array;
     end function ;	
 				       
  end package body;			   
