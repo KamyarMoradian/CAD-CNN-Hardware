@@ -47,7 +47,7 @@ package body My_Package is
 	variable tmp_win_buffer_t : win_buffer_t;
 	variable j : integer := 0;			   
 	    begin	       
-		all_win_array := get_all_windows_from_file();
+		all_win_array := get_all_windows_from_file;
 		 for i in 0 to n-1 loop
 			for x in 0 to 125 loop
 				for y in 0 to 125 loop
