@@ -41,16 +41,18 @@ end package;
 -- TODO: Write function bodies
 
 package body My_Package is
-    function get_buffer_windows (n: integer) return win_array_buffer_t is 
+    function get_buffer_windows (n: integer) return win_array_buffer_t is
+	variable all_win_array : win_array_t;
 	variable win_out_buffers : win_array_buffer_t(0 to n-1);
 	variable tmp_win_buffer_t : win_buffer_t;
 	variable j : integer := 0;			   
 	    begin	       
+		all_win_array := get_all_windows_from_file();
 		 for i in 0 to n-1 loop
 			for x in 0 to 125 loop
 				for y in 0 to 125 loop
-				       if ((x+y) mod n = i) then
-		        		    tmp_win_buffer_t(j) := func3(x,y);
+				       if ((x * 126 + y) mod n = i) then
+		        		    tmp_win_buffer_t(j) := all_win_array(x,y);
 				       end if;
 				       j := j + 1;
 				end loop;
@@ -63,16 +65,14 @@ package body My_Package is
 				       
     function generate_random_filter (n : integer) return filter_array_t;
 	variable tmp_real : real;
-        variable tmp_filter : win_t ;
-        variable intx : integer ;
+        variable tmp_filter : filter_t ;
         variable filter_array_out : array_of_filters(0 to n-1);
 	begin
 	     for i in 0 to n-1 loop
 		  for x in 0 to 2 loop
 			for y in 0 to 2 loop
-				uniform(0 , 1, r);
-				intx := integer(floor(r* real(2**3)));
-				tmp_filter(x,y) := intx;
+				uniform(0 , 1, tmp_real);
+				tmp_filter(x,y) := tmp_real;
 			end loop;
 		  end loop ;
 		 filter_array_out(i) := tmp_filter;
@@ -97,5 +97,4 @@ package body My_Package is
 		end loop;
 	return win_out_array;
     end function ;	
-				       
  end package body;			   
