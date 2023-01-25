@@ -56,13 +56,14 @@ package body My_Package is
 				end loop;
 			end loop;
 			win_out_buffers(i) := tmp_win_buffer_t;
+			j := 0;
 		 end loop;
 	     return win_out_buffers;
 	end function ;
 				       
     function generate_random_filter (n : integer) return filter_array_t;
 	variable tmp_real : real;
-        variable tmp_win : win_t ;
+        variable tmp_filter : win_t ;
         variable intx : integer ;
         variable filter_array_out : array_of_filters(0 to n-1);
 	begin
@@ -71,10 +72,10 @@ package body My_Package is
 			for y in 0 to 2 loop
 				uniform(0 , 1, r);
 				intx := integer(floor(r* real(2**3)));
-				tmp_win(x,y) := intx;
+				tmp_filter(x,y) := intx;
 			end loop;
 		  end loop ;
-		 filter_array_out(i) := tmp_win;
+		 filter_array_out(i) := tmp_filter;
 		end loop;
         return filter_array_out;
     end function;
