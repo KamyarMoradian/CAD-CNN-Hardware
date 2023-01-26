@@ -1,11 +1,11 @@
 # compile vhdl design source files
 vhdl xil_defaultlib  \
-"../../../../CNNHardware.srcs/sources_1/new/CNNPackages.vhd" \
 "../../../../CNNHardware.srcs/sources_1/new/AdderOfReal.vhd" \
+"../../../../CNNHardware.srcs/sources_1/new/CNNPackages.vhd" \
 "../../../../CNNHardware.srcs/sources_1/new/BinaryAdder.vhd" \
 "../../../../CNNHardware.srcs/sources_1/new/MultiplierOfReal.vhd" \
 "../../../../CNNHardware.srcs/sources_1/new/PE.vhd" \
-"../../../../CNNHardware.srcs/sources_1/new/Accelerator.vhd" \
+"../../../../CNNHardware.srcs/sim_1/new/PE_TB.vhd" \
 
 # Do not sort compile order
 nosort

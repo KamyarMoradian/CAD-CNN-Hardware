@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "GenerateAllWin_TB_behav" "xil_defaultlib.GenerateAllWin_TB" -log "elaborate.log" 

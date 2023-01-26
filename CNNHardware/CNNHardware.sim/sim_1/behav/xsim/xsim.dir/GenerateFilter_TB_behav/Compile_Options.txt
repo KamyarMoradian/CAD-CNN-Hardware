@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "GenerateFilter_TB_behav" "xil_defaultlib.GenerateFilter_TB" -log "elaborate.log" 
